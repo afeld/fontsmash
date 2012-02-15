@@ -1,6 +1,6 @@
 module Fontsmash
   class Font
-    attr_accessor :family, :provider, :style, :backup
+    attr_accessor :family, :provider, :variants, :subsets, :backup
 
     def initialize attrs={}
       attrs.each do |key, val|

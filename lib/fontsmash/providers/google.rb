@@ -9,7 +9,8 @@ module Fontsmash
           fonts = json_hsh['items'].map do |font|
             Fontsmash::Font.new(
               family: font['family'],
-              provider: :google
+              variants: font['variants'],
+              subsets: font['subsets']
             )
           end
 
