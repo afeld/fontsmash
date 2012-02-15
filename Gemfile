@@ -1,8 +1,10 @@
 source "http://rubygems.org"
 
 
-gem 'sinatra'
-gem 'multi_json'
+gem 'sinatra', '~> 1.3'
+gem 'multi_json', '~> 1.0'
+gem 'activesupport', '~> 3.2', :require => false
+gem 'httparty', '~> 0.8'
 
 group :development do
   gem "bundler", "~> 1.0.0"

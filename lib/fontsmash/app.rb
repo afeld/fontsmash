@@ -5,7 +5,7 @@ module Fontsmash
 
 
     get '/css' do
-      
+      Fontsmash.get_stylesheet params['family']
     end
   end
 end
