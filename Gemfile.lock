@@ -9,6 +9,7 @@ GEM
       rake
       rdoc
     json (1.6.5)
+    multi_json (1.0.4)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -35,5 +36,6 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0.0)
   jeweler (~> 1.8.3)
+  multi_json
   rspec (~> 2.8.0)
   sinatra
