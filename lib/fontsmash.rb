@@ -40,10 +40,10 @@ Dir["#{File.dirname(__FILE__)}/fontsmash/providers/*.rb"].each {|file| require f
 
 # add fonts from each provider
 Fontsmash::Providers.constants.each do |class_name|
-  klass = Fontsmash::Providers.const_get class_name
-  fonts = klass.get_fonts
+  provider = Fontsmash::Providers.const_get(class_name).new
+  fonts = provider.get_fonts
   fonts.each do |font|
-    font.provider = klass
+    font.provider = provider
     Fontsmash.add_font font
   end
 end
