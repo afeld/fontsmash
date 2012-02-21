@@ -15,14 +15,17 @@ module Fontsmash
         fonts
       end
 
-      def get_stylesheet fonts
+      def get_stylesheet fonts, user_agent=nil
         family_param = fonts.map{|font|
           font.family
           # TODO handle variant and subsets
         }.join('|')
 
         family_param = CGI.escape family_param
-        resp = HTTParty.get "http://fonts.googleapis.com/css?family=#{family_param}"
+        resp = HTTParty.get(
+          "http://fonts.googleapis.com/css?family=#{family_param}",
+          headers: {'User-Agent' => user_agent}
+        )
         resp.body
       end
     end

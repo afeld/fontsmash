@@ -14,7 +14,7 @@ module Fontsmash
       @fonts
     end
 
-    def get_stylesheet fonts_str
+    def get_stylesheet fonts_str, user_agent=nil
       families = fonts_str.split '|'
 
       fonts_by_provider = {}
@@ -27,7 +27,7 @@ module Fontsmash
       end
 
       stylesheets = fonts_by_provider.map do |provider, fonts|
-        provider.get_stylesheet fonts
+        provider.get_stylesheet fonts, user_agent
       end
 
       stylesheets.join "\n"
